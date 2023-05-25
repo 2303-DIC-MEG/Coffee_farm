@@ -25,6 +25,6 @@ https://docs.google.com/spreadsheets/d/1uw1sRsO3pHZiM1z-FPtfucvGWSFZT8jBtGCEkVa5
 # ワイヤーフレーム
 https://drive.google.com/file/d/1dXAY04oY8hYsxuGpP-FUJD6_3yLjJlFs/view?usp=sharing
 # ER図
+![](ER.png)
 # 画面遷移図
-
-
+![](Diagram.png)
