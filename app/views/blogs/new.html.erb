@@ -1,11 +1,5 @@
-<%= form_with(model: @blog) do |form| %>
-  <div class="blog_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div class="blog_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<h1>New Blog</h1>
+
+<%= render 'form', blog: @blog %>
+
+<%= link_to 'Back', blogs_path %>

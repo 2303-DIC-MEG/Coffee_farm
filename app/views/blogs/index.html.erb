@@ -1,16 +1,24 @@
-<h1>ブログ一覧</h1>
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
+<p id="notice"><%= notice %></p>
 
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.title %></td>
-    <td><%= blog.content %></td>
-  </tr>
-<% end %>
-<%= link_to 'ブログ一覧画面に戻る', blogs_path %>
-<%= link_to '新しくブログを投稿する', new_blog_path %>
+<h1>Blogs</h1>
+
+<table>
+
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+    <div class="card-group" style="width:18rem">
+    <div class="card">
+      <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <%= link_to blog, class: "card-body text-dark" do %>
+          <p><%= l blog.created_at, format: :short %></p>
+            <h5 class="card-title"><%= blog.title %></h5>
+            <p class="card-text"><%= blog.content %></p>
+          <% end %>
+        </div>
+    </div>
+    <% end %>
+  </tbody>
 </table>
+
+<br>
