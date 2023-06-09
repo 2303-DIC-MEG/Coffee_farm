@@ -281,6 +281,7 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  bcrypt
   bootsnap (>= 1.4.4)
   byebug
   cancancan
