@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :blogs
   has_one :profile
+  has_many :favorites, dependent: :destroy
 
   enum role: { Coffee_farmer: 0, Barista: 1 }
   devise :database_authenticatable, :registerable,
