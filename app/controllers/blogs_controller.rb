@@ -16,6 +16,11 @@ class BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find(params[:id])
+    if @blog.user == current_user
+      render "edit"
+    else
+      redirect_to blogs_path
+    end
   end
 
   def create

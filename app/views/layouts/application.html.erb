@@ -12,6 +12,11 @@
 
     <br>
 
+    <div class="coffee_blogs">
+      <%= link_to users = User.where(role: 0) %>
+      Coffee_farm   
+    <div>
+
     <div class="wrapper">
       <div class="search">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -21,7 +26,7 @@
         <% end %>
       </div>
       <div class="Add_blog">
-        <%= link_to new_blog_path, class: "btn btn-primary" do %>
+        <%= link_to new_blog_path, class: "btn btn-outline-primary" do %>
           <i class="bi bi-plus" aria-hidden="true"></i>
           New Blog
         <% end %>
