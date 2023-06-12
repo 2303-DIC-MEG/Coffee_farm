@@ -21,18 +21,8 @@
 </p>
 
 <p>
-  <strong>Atitude:</strong>
-  <%= @profile.atitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @profile.longitude %>
-</p>
-
-<p>
   <strong>Image:</strong>
-  <%= @profile.image %>
+  <%= image_tag @profile.image %>
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
