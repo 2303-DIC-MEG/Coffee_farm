@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :blogs
+  has_one :profile
 
   enum role: { Coffee_farmer: 0, Barista: 1 }
   devise :database_authenticatable, :registerable,
