@@ -4,6 +4,6 @@ class Blog < ApplicationRecord
   mount_uploader :image, ImageUploader
   def self.search(search)
     return Blog.all unless search
-    Blog.where(['content LIKE(?) OR title LIKE(?)', "%#{search}%", "%#{search}%"])
+    Blog.where(['content ILIKE(?) OR title ILIKE(?)', "%#{search}%", "%#{search}%"])
   end
 end
