@@ -104,6 +104,8 @@ GEM
       devise (>= 4.9.0)
     erubi (1.12.0)
     ffi (1.15.5)
+    font-awesome-sass (6.4.0)
+      sassc (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.13.0)
@@ -303,6 +305,7 @@ DEPENDENCIES
   carrierwave
   devise
   devise-i18n
+  font-awesome-sass
   jbuilder (~> 2.7)
   letter_opener_web
   listen (~> 3.3)
