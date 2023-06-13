@@ -3,12 +3,8 @@ class User < ApplicationRecord
   has_one :profile
   has_many :favorites, dependent: :destroy
   has_many :likes_blogs, through: :likes, source: :blog
-  enum role: { Coffee_farmer: 0, Barista: 1 }
+  enum role: { Coffee_farm: 0, Barista: 1 }
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
 
-  # validates :name, presence: true
-  # validates :profile, presence: true
-  # validates :occupation, presence: true
-  # validates :position, presence: true
 end

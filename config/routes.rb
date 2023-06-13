@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :profiles
   resources :blogs
+  resources :favorites, only: [:create, :destroy]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root 'blogs#index'
