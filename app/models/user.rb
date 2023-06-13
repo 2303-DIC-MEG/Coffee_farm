@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def liked_by?(post_id)
     likes.where(post_id: post_id).exists?
   end
+
+  def already_favorited?(blog)
+    favorites.exists?(blog_id: blog.id)
+  end
 end

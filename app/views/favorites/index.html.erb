@@ -1,0 +1,39 @@
+<br>
+<h1 class="title">お気に入り一覧</h1>
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @favorites.each do |favorite| %>
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to blog_path(favorite.blog) do %>
+                <% end %>
+              </figure>
+            </div>
+              <div class="media-content">
+                <div class="title"><%= link_to favorite.blog.user.name, user_path(favorite.blog.user) %></div>
+              </div>
+              </div>
+              <div class="media-content">
+                <%= favorite.blog.title %>
+                <% if current_user.already_favorited?(favorite.blog) %>
+                  <%= link_to blog_favorites_path(favorite.blog), method: :delete do %>
+                    <%# <i class="fas fa-heart"></i> %>
+                  <% end %>
+                  <%= favorite.blog.favorites.count %>
+                <% else %>
+                  <%= link_to blog_favorites_path(favorite.blog), method: :post do %>
+                    <%# <i class="far fa-heart"></i> %>
+                  <% end %>
+                  <%= favorite.blog.favorites.count %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

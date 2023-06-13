@@ -13,19 +13,6 @@
 
     <br>
 
-    <%# <div class="coffee_blogs"> %>
-      <%# <% if user_signed_in? %>
-        <%# <% if current_user.role == 0 %> %>
-          <%# <%= link_to "Coffee_farm" path_name %> %>
-        <%# <% else %> %>
-          <%# <%= link_to "" path_name %> %>
-        <%# <% end %> %>
-      <%# <% else %> %>
-        <%# <%= link_to "Coffee_farm" path_name %> %>
-        <%# <%= link_to "" path_name %> %>
-      <%# <% end %> %>
-    <%# </div> %>
-
     <div class="wrapper">
       <div class="search">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -34,6 +21,8 @@
           <% f.submit %>
         <% end %>
       </div>
+        <%= link_to "お気に入り一覧", favorites_index_path %>
+      <div>
       <div class="Add_blog">
         <%= link_to new_blog_path, class: "btn btn-outline-primary" do %>
           <i class="bi bi-plus" aria-hidden="true"></i>
