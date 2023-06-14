@@ -3,15 +3,12 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    # binding.pry
     @blogs = Blog.all.order(created_at: :desc)
-
-    # if params[:role] == "coffee_form"
-    #   # whereでコヒだけの絞り込み
-    # elsif 
-
-    # else
-      # 全部出す
+    @blogs = @blogs.where(user_id: User.send(params[:role]).pluck(:id)) if params[:role].in?(User.roles.keys)
+    # if params[:role] == "Coffee_form"
+    #   @blogs = @blogs.where(user_id: User.where(role: :Coffee_farm).pluck(:id))
+    # elsif params[:role] == "Barista"
+    #   @blogs = @blogs.where(user_id: User.where(role: :Barista).pluck(:id))
     # end
   end
 
