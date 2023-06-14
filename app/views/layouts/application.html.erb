@@ -20,9 +20,7 @@
           <%= f.text_field :search, placeholder: "キーワード検索" %>
           <% f.submit %>
         <% end %>
-      </div>
-        <%= link_to "お気に入り一覧", favorites_path %>
-      <div>
+      
       <div class="Add_blog">
         <%= link_to new_blog_path, class: "btn btn-outline-primary" do %>
           <i class="bi bi-plus" aria-hidden="true"></i>
@@ -30,6 +28,8 @@
       </div>
       <div class = "login_blog">
         <% if user_signed_in? %>
+          <%= link_to "お気に入り一覧", favorites_path %>
+          <%= link_to "プロフィール", profiles_path %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path %>
