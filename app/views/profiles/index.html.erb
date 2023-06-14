@@ -1,3 +1,5 @@
+<main class="form-signin" style="width: 100%; max-width: 330px; padding: 15px; margin: auto;">
+
 <p id="notice"><%= notice %></p>
 
 <h1>Profiles</h1>
@@ -23,14 +25,12 @@
         <td><%= profile.atitude %></td>
         <td><%= profile.longitude %></td>
         <td><%= profile.image %></td>
-        <td><%= link_to 'Show', profile %></td>
+      </tr>
+      <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
   </tbody>
 </table>
-
+</main>
 <br>
-
-<%= link_to 'New Profile', new_profile_path %>
