@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <%# <strong>Image:</strong> %>
+  <%= link_to @blog.user.name, profile_path(@blog.user), class: 'btn btn-link' %>
+</p>
+
+<p>
   <%= image_tag @blog.image.url %>
 </p>
 
