@@ -1,7 +1,8 @@
+<main class="form-signin" style="width: 100%; max-width: 330px; padding: 15px; margin: auto;">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <%= link_to @blog.user.name, profile_path(@blog.user), class: 'btn btn-link' %>
+  <%= link_to @blog.user.profile.name, profile_path(@blog.user), class: 'btn btn-link' %>
 </p>
 
 <p>
@@ -32,4 +33,4 @@
   <%= link_to 'Edit', edit_blog_path(@blog) %>
 <% end %>
 <%= link_to 'Back', blogs_path %>
-
+</main>
