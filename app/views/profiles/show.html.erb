@@ -23,7 +23,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @profile.image %>
+  <%= image_tag @profile.image.url %>
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
