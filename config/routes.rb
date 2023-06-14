@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   get  '/search',  to: 'blogs#search'
 
   resources :blogs do
-    resources :favorites, only: [:create, :destroy]
+    # resources :favorites, only: [:index, :create, :destroy]
   end
-  get 'favorites/index'
+
+  resources :favorites, only: [:index, :create, :destroy]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   

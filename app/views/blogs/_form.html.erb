@@ -30,6 +30,7 @@
     <div class="actions">
       <%= form.submit %>
       <td><%= link_to 'Show', @blog %></td>
+      <% if blog.user == current_user %>
       <td><%= link_to 'Back', blogs_path %><td>
       <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </div>
