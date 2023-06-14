@@ -8,10 +8,6 @@ Rails.application.routes.draw do
   post '/search',  to: 'blogs#search'
   get  '/search',  to: 'blogs#search'
 
-  resources :blogs do
-    # resources :favorites, only: [:index, :create, :destroy]
-  end
-
   resources :favorites, only: [:index, :create, :destroy]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

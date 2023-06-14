@@ -26,6 +26,8 @@
           <i class="bi bi-plus" aria-hidden="true"></i>
         <% end %>
       </div>
+      <%= link_to "コーヒー農園ブログ",  blogs_path(role: "Coffee_farm") %>
+      <%= link_to "バリスタブログ",  blogs_path(role: "Barista") %>
       <div class = "login_blog">
         <% if user_signed_in? %>
           <%= link_to "お気に入り一覧", favorites_path %>

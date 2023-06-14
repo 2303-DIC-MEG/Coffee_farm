@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   before_action :set_profile, only: %i[ show edit update destroy ]
 
   def index
@@ -18,6 +18,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
+    @profile.user = current_user
 
     respond_to do |format|
       if @profile.save

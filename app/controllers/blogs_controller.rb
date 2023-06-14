@@ -3,7 +3,16 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    # binding.pry
     @blogs = Blog.all.order(created_at: :desc)
+
+    # if params[:role] == "coffee_form"
+    #   # whereでコヒだけの絞り込み
+    # elsif 
+
+    # else
+      # 全部出す
+    # end
   end
 
   def show
