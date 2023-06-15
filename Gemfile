@@ -20,6 +20,8 @@ gem 'devise-i18n'
 gem 'rails_admin'
 gem 'cancancan'
 gem 'font-awesome-sass'
+gem "geocoder"
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

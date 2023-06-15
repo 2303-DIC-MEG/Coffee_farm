@@ -106,6 +106,7 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (6.4.0)
       sassc (~> 2.0)
+    geocoder (1.8.1)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.13.0)
@@ -306,6 +307,7 @@ DEPENDENCIES
   devise
   devise-i18n
   font-awesome-sass
+  geocoder
   jbuilder (~> 2.7)
   letter_opener_web
   listen (~> 3.3)
