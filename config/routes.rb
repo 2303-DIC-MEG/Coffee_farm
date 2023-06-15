@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   post '/search',  to: 'blogs#search'
   get  '/search',  to: 'blogs#search'
+  get 'profile', to: 'profiles#show'
 
   resources :favorites, only: [:index, :create, :destroy]
 
