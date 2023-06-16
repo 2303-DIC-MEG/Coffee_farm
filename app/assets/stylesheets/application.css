@@ -12,6 +12,13 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
+
  */
+.search-bar {
+  width: 300px;
+}
+
+.nav-right {
+  float: right;
+}
 
