@@ -18,10 +18,6 @@
   width: 300px;
 }
 
-.nav-right {
-  float: right;
-}
-
 .card {
   margin-bottom: 20px; /* カードの下部にマージンを追加 */
 }

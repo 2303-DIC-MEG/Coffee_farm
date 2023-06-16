@@ -1,26 +1,21 @@
-<div class="col-md-8">
-    <h3>検索結果</h3>
-    
-    <%# <%= paginate @blogs %>
+  <h3>検索結果</h3>
     <tbody>
-    <div class="container">
-      <div class="row">
-        <% @blogs.each do |blog| %>
-          <div class="col-12 col-sm-6 col-md-4">
-            <div class="card" style="width: 18rem;">
-              <a href="/blogs/<%= blog.id %>" class="card-body text-dark">
-                <h5><%= blog.user.profile.name %></h5>
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-                  <div class="card-body">
-                  <h5 class="card-title"><%= blog.title %></h5>
-                  <p class="card-text"><%= blog.content %></p>
-                </div>
-              </a>
+      <div class="container">
+        <div class="row">
+          <% @blogs.each do |blog| %>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card" style="width: 18rem;">
+                <a href="/blogs/<%= blog.id %>" class="card-body text-dark">
+                  <h5><%= blog.user.profile.name %></h5>
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+                    <div class="card-body">
+                    <h5 class="card-title"><%= blog.title %></h5>
+                    <p class="card-text"><%= truncate(blog.content, length: 10) %></p>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-        <% end%>
+          <% end%>
+        </div>
       </div>
-    </div>
-  </tbody>
-    <%# <%= paginate @blogs %>
-  </div>
+    </tbody>
