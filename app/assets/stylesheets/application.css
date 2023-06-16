@@ -26,18 +26,22 @@
   margin-bottom: 20px; /* カードの下部にマージンを追加 */
 }
 
-.container {
-  padding-bottom: 60px;
-  box-sizing: border-box;
+body,
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.footer {
-  height: 60px;
-  width: 100%;
-  background-color:#F8F9FA;
-  display: table;
+footer {
+  margin-top: auto;
+  background-color: #f8f9fa; 
   position: fixed;
   bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }
 
 

@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
-    @favorite = current_user.favorites.find_by(blog_id: @use.id)
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id) if user_signed_in?
   end
 
   def new
