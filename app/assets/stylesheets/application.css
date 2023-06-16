@@ -26,4 +26,22 @@
   margin-bottom: 20px; /* カードの下部にマージンを追加 */
 }
 
+.container {
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.footer {
+  height: 60px;
+  width: 100%;
+  background-color:#F8F9FA;
+  display: table;
+  position: fixed;
+  bottom: 0;
+}
+
+
+
+
+
 
