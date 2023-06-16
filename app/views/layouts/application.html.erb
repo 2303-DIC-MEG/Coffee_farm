@@ -38,7 +38,9 @@
     
             <% if user_signed_in? %>
               <%= link_to "お気に入り一覧", favorites_path %>
-              <%= link_to "プロフィール", profile_path(current_user.profile.id) %>
+                <% if !current_user.profile.nil? %>
+                  <%= link_to "プロフィール", profile_path(current_user.profile.id) %>
+                <% end %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             <% else %>
               <%= link_to "新規登録", new_user_registration_path %>
