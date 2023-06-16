@@ -22,6 +22,8 @@ gem 'cancancan'
 gem 'font-awesome-sass'
 gem "geocoder"
 gem "dotenv-rails"
+gem 'font-awesome-sass'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
