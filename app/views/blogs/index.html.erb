@@ -1,13 +1,20 @@
 
 <% if current_user.try(:admin?) %>
   <h1>Blogs_admin</h1>
-<% else %>
-  <h1>Blog</h1>
+  <% else %>
+    <% if params[:role] == "Coffee_farm" %>
+      <h1>コーヒー農園ブログ</h1>
+    <% elsif params[:role] == "Barista" %>
+      <h1>バリスタブログ</h1>
+    <% elsif %>
+      <h1>ブログ一覧</h1>
+  <% end %>
 <% end %>
 
+<br>
+<br>
+
 <table>
-
-
   <tbody>
     <div class="container">
       <div class="row">
