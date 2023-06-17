@@ -1,99 +1,100 @@
+<%# <main class="form-signin" style="width: 100%; max-width: 650px; padding: 15px; margin: 0 auto; margin-left: 20px; margin-right: 20px;"> %>
+  <div style="text-align: center;">
+    <%= image_tag @profile.image.url, style: "margin-bottom: 20px; width: 1300px; height: 700px;" %>
+  </div>
 
-<p id="notice"><%= notice %></p>
+  <div style="display: flex; align-items: flex-start;">
+    <div style="flex: 1; padding-right: 10px;">
+      <div id="map" style="height: 400px; width: 100%;"></div>
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
+    <div style="flex: 1; padding-left: 10px;">
+      <p style="font-size: 20px; margin-bottom: 10px;">
+        <strong>Name:</strong>
+        <%= @profile.name %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @profile.description %>
-</p>
+      <p style="font-size: 16px; margin-bottom: 10px;">
+        <strong>Description:</strong><br/>
+        <% @profile.description.scan(/.{1,30}/).each do |description_part| %>
+          <%= description_part %><br/>
+        <% end %>
+      </p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @profile.country %>
-</p>
+      <p style="font-size: 16px; margin-bottom: 10px;">
+        <strong>Country:</strong>
+        <%= @profile.country %>
+      </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @profile.address %>
-</p>
+      <p style="font-size: 16px; margin-bottom: 10px;">
+        <strong>Address:</strong>
+        <%= @profile.address %>
+      </p>
 
-<p>
-<script type="text/javascript">
-  function initMap() {
-// latitude,longitudeから位置を特定
-    var test ={lat: <%= @profile.latitude %>, lng: <%= @profile.longitude %>};
-    var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 15, 
-              center: test
-              });
-    var transitLayer = new google.maps.TransitLayer();
-    transitLayer.setMap(map);
+      <% if user_signed_in? && current_user.id == @profile.user_id %>
+        <%= link_to 'Edit', edit_profile_path(@profile), style: "display: block; margin-bottom: 10px;" %>
+      <% end %>
 
-    var contentString = '住所：<%= @profile.address %>';
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
+      <%= link_to 'Back', blogs_path, style: "display: block;" %>
+    </div>
+  </div>
+<%# </main> %>
 
-//  Map上の指定した位置にピンを挿して表示する
-    var marker = new google.maps.Marker({
-                  position:test,
-                  map: map,
-                  title: contentString
-                });
+  <script type="text/javascript">
+    function initMap() {
+      var test = { lat: <%= @profile.latitude %>, lng: <%= @profile.longitude %> };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: test
+      });
+      var transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
+
+      var contentString = '住所：<%= @profile.address %>';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+      var marker = new google.maps.Marker({
+        position: test,
+        map: map,
+        title: contentString
+      });
 
       marker.addListener('click', function() {
         infowindow.open(map, marker);
       });
-  }
-</script>
+    }
+  </script>
 
-<%# 以下の記述の中にあるYOUR_API_KEYには取得したご自身のAPIキーを記述してください %>
-<script async defer
-              src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-</script>
-<%# 表示するmapのcssです。ご自身でカスタマイズしてください。高さが設定されていないと表示されないことがあります。 %>
-<style type="text/css">
-  #map { height: 200px;
-          width: 70%;
-        }
-</style>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"></script>
 
-<%# mapの表示 %>
-<div id="map"></div>
-</p>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @profile.image.url %>
-</p>
+  <style type="text/css">
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
 
-<% if user_signed_in? && current_user.id == @profile.user_id %>
-<%= link_to 'Edit', edit_profile_path(@profile) %> 
-<% end %>
-<%= link_to 'Back', blogs_path %>
-
-<h2>Previous Blogs:</h2>
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        <% @blogs.each do |blog| %>
-          <div class="col-12 col-sm-6 col-md-4">
-            <div class="card" style="width: 18rem;">
-              <a href="/blogs/<%= blog.id %>" class="card-body text-dark">
-                <h5><%= blog.user.profile.name %></h5>
-                  <div class="card-body">
-                  <p><%= image_tag blog.image.url, class:"w-100" %></p>
-                  <h5 class="card-title"><%= blog.title %></h5>
-                  <p class="card-text"><%= truncate(blog.content, length: 10) %></p>
-                </div>
-              </a>
+  <h2>Previous Blogs:</h2>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <% @blogs.each do |blog| %>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="card" style="width: 18rem;">
+                <a href="/blogs/<%= blog.id %>" class="card-body text-dark">
+                  <h5><%= blog.user.profile.name %></h5>
+                    <div class="card-body">
+                    <p><%= image_tag blog.image.url, class:"w-100" %></p>
+                    <h5 class="card-title"><%= blog.title %></h5>
+                    <p class="card-text"><%= truncate(blog.content, length: 10) %></p>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-        <% end%>
+          <% end%>
+        </div>
       </div>
     </div>
-  </div>
-
+  
