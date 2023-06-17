@@ -30,11 +30,37 @@
           <%= description_part %><br/>
         <% end %>
       </p>
-      <p>
-        <div class="qr-code">
-          <%= render_qr_code(profile_url(@profile), size: 200) %>
-        </div>
-      </p>
+      
+<%# QRコード表示 　ここから%>
+  <button onclick="showQRCode()">QRコードを表示する</button>
+
+<%# 別窓中央表示 %>
+<div id="qr-code-wrapper" style="display: none;">
+  <div id="qr-code" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); width: 400px; height: 400px;">
+    <%= raw @qr_code_svg %>
+    <button onclick="closeQRCode()">閉じる</button>
+  </div>
+</div>
+<%# 別窓中央表示/javascript %>
+<script>
+  function showQRCode() {
+    var qrCodeWrapper = document.getElementById("qr-code-wrapper");
+    var overlay = document.getElementById("overlay");
+
+    qrCodeWrapper.style.display = "block";
+    overlay.style.display = "block";
+  }
+
+  function closeQRCode() {
+    var qrCodeWrapper = document.getElementById("qr-code-wrapper");
+    var overlay = document.getElementById("overlay");
+
+    qrCodeWrapper.style.display = "none";
+    overlay.style.display = "none";
+  }
+</script>
+
+<%# ここまで %>
 
       <p>
         <div style="text-align: right; margin-right: 80px;">
