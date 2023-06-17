@@ -1,10 +1,15 @@
-<main class="form-signin" style="width: 100%; max-width: 330px; padding: 15px; margin: auto;">
+<main class="form-signin" style="width: 100%; max-width: 330px; padding: 15px; margin: auto; text-align: center;">
 
 <h2><%= t('.sign_up') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  
+
+    <div class="mb-3">
+      <%= f.label :name, class: "form-label" %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    </div>
+
     <div class="mb-3">
       <%= f.label :job, class: "form-label" %><br />
       <%= f.select :role, User.roles.keys.to_a, {}, class: 'form-control' %>
@@ -24,7 +29,7 @@
     </div>
   
     <div class="mb-3">
-      <%= f.label :password_confirmation, class: "form-label" %><br />
+      <%= f.label :password_confirmation, class: "form-label"%><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
   
