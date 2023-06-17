@@ -1,7 +1,8 @@
-<main class="form-signin" style="width: 100%; max-width: 330px; padding: 15px; margin: auto;">
-
-<h1>New Profile</h1>
-
-<%= render 'form', profile: @profile %>
-
+<main class="form-signin" style="width: 100%; max-width: 650px; padding: 15px; margin: 0 auto;">
+  <div class="search-results" style="margin-top: 20px;">
+    <h1>New Profile</h1>
+    
+    <%= render 'form', profile: @profile %>
+  </div>
+</main>
 <%= link_to 'Back', blogs_path %>
