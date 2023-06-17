@@ -2,7 +2,7 @@
 //   background-image: url("/assets/background.jpg");
 //   background-repeat: no-repeat;
 //   background-size: cover;
-//   background-color: rgba(255, 255, 255, 0.1);
+//   background-color: rgba(255, 255, 255, 0.5);
 // }
 
 body, p, ol, ul, td {
@@ -65,3 +65,25 @@ div.actions {
 
 label {
   display: block; }
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+body {
+  padding-top: 56px; /* ヘッダーの高さ分の余白を追加 */
+  padding-bottom: 56px; /* フッターの高さ分の余白を追加 */
+  background: radial-gradient(circle at bottom, #f2dcb1 20%, #ffc97c 50%, #cfa05f 80%);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
+}
+

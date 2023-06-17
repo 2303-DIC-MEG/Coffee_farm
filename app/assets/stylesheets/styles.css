@@ -1,12 +1,4 @@
-/* ページ全体のスタイル */
-body {
-  background-color: #f7f7f7;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* メインコンテンツのスタイル */
+メインコンテンツのスタイル
 .form-signin {
   max-width: 800px;
   width: 100%;
@@ -57,18 +49,18 @@ body {
   color: #fff;
 }
 
-.btn-primary {
+/* .btn-primary {
   background-color: #a4c7ed;
-}
+} */
 
-.btn-danger {
+/* .btn-danger {
   background-color: #dc3545;
-}
+} */
 
-.btn-link {
+/* .btn-link {
   background-color: transparent;
   color: #060606;
-}
+} */
 
 /* リンクのスタイル */
 a {
