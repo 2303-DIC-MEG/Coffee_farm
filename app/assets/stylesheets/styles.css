@@ -58,7 +58,7 @@ body {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #a4c7ed;
 }
 
 .btn-danger {
@@ -67,7 +67,7 @@ body {
 
 .btn-link {
   background-color: transparent;
-  color: #007bff;
+  color: #060606;
 }
 
 /* リンクのスタイル */

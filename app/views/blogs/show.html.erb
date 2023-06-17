@@ -1,16 +1,16 @@
-<main class="form-signin" style="width: 100%; max-width: 800px; margin: auto;">
+<main class="form-signin" style="width: 100%; max-width: 900px; margin: auto;">
   <head>
     <link rel="stylesheet" type="text/css" href="/assets/styles.css">
   </head>
   <div style="display: flex;">
-    <div style="flex: 0 0 300px;">
+    <div style="flex: 0 0 400px;">
       <p>
-        <%= image_tag @blog.image.url, class: 'blog-image' %>
+        <%= image_tag @blog.image.url, class: 'blog-image', style: 'width: 100%; max-width: 400px;' %>
       </p>
     </div>
     <div style="flex: 1; margin-left: 40px;">
       <p>
-        <%= link_to @blog.user.profile.name, profile_path(@blog.user), class: 'btn btn-link' %>
+        <%= link_to @blog.user.profile.name, profile_path(@blog.user), class: 'btn btn-link', style: 'font-size: 24px;' %>
         <%= @blog.created_at.to_date.strftime('%Y-%m-%d') %>
       </p>
       <div class="blog-details">
@@ -21,26 +21,31 @@
         <p>
           <strong>Content:</strong>
         </p>
-        <div class="blog-content">
-          <%= @blog.content.scan(/.{1,30}/).join("<br>").html_safe %>
+        <div class="blog-content" style="font-size: 18px;">
+          <%= @blog.content.scan(/.{1,45}/).join("<br>").html_safe %>
         </div>
       </div>
       <p>
         <% if user_signed_in? %>
           <% unless @blog.user_id == current_user.id %>
             <% if @favorite.present? %>
-              <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+              <%= link_to favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' do %>
+                <i class="fas fa-bookmark"></i> ブックマーク解除する
+              <% end %>
             <% else %>
-              <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+              <%= link_to favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' do %>
+                <i class="fas fa-bookmark"></i> ブックマークする
+              <% end %>
+
             <% end %>
           <% end %>
         <% end %>
       </p>
       <p>
         <% if user_signed_in? && current_user.id == @blog.user_id %>
-          <%= link_to 'Edit', edit_blog_path(@blog) %>
+          <%= link_to 'Edit', edit_blog_path(@blog), style: 'margin-right: 10px;'%>
         <% end %>
-        <%= link_to 'Back', blogs_path %>
+        <%= link_to 'Back', blogs_path%>
       </p>
     </div>
   </div>

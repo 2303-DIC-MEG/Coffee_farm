@@ -29,14 +29,14 @@
       </div>
     
       <div class="actions text-center">
-        <%= form.submit %>
-  
-        <% if blog.user == current_user %>
-        <td><%= link_to 'Show', @blog %></td>
-        
-        <td><%= link_to 'Back', blogs_path %><td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end%>
+        <p><%= form.submit %></p>
+        <p>
+          <%= link_to 'Back', blogs_path, style: 'margin-right: 10px;' %>
+          <% if blog.user == current_user %>
+          <td><%= link_to 'Show', @blog, style: 'margin-right: 10px;' %></td>
+          <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, style: 'margin-right: 10px;' %></td>
+          <% end%>
+        </p>
       </div>
     </div>
   <% end %>
