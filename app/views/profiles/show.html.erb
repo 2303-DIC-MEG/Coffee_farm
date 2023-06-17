@@ -4,7 +4,7 @@
   </div>
 
   <div style="display: flex; align-items: flex-start;">
-    <div style="flex: 1; padding-right: 10px;">
+    <div style="flex: 1; padding-right: 10px; padding-left: 85px;">
       <div id="map" style="height: 400px; width: 100%;"></div>
     </div>
 
@@ -30,12 +30,12 @@
         <strong>Address:</strong>
         <%= @profile.address %>
       </p>
-
-      <% if user_signed_in? && current_user.id == @profile.user_id %>
-        <%= link_to 'Edit', edit_profile_path(@profile), style: "display: block; margin-bottom: 10px;" %>
-      <% end %>
-
-      <%= link_to 'Back', blogs_path, style: "display: block;" %>
+      <p>
+        <% if user_signed_in? && current_user.id == @profile.user_id %>
+          <%= link_to '', edit_profile_path(@profile), class: "fas fa-solid fa-pen-fancy fa-2x", title: "プロフィール編集"  %>
+        <% end %>
+        <td><%= link_to '', blogs_path, class:"fas fa-regular fa-share-from-square fa-flip-horizontal fa-2x", title: "blog一覧へ" %><td>
+      </p>
     </div>
   </div>
 <%# </main> %>
