@@ -12,18 +12,27 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'ransack'
+
+#画像用
 gem 'carrierwave'
 gem 'mini_magick'
+
+# 管理者権限
 gem 'devise'
 gem 'rexml'
 gem 'devise-i18n'
 gem 'rails_admin'
 gem 'cancancan'
-gem 'font-awesome-sass'
-gem "geocoder"
-gem "dotenv-rails"
+
+# icon
 gem 'font-awesome-sass'
 
+# googlemap
+gem "geocoder"
+gem "dotenv-rails"
+
+# QRコード
+gem "rqrcode"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

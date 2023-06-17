@@ -1,24 +1,17 @@
-<%# <main class="form-signin" style="width: 100%; max-width: 650px; padding: 15px; margin: 0 auto; margin-left: 20px; margin-right: 20px;"> %>
+<br>
   <div style="text-align: center;">
     <%= image_tag @profile.image.url, style: "margin-bottom: 20px; width: 1300px; height: 700px;" %>
   </div>
 
   <div style="display: flex; align-items: flex-start;">
     <div style="flex: 1; padding-right: 10px; padding-left: 85px;">
-      <div id="map" style="height: 400px; width: 100%;"></div>
+      <div id="map" style="height: 400px; width: 600px;"></div>
     </div>
 
     <div style="flex: 1; padding-left: 10px;">
       <p style="font-size: 20px; margin-bottom: 10px;">
         <strong>Name:</strong>
         <%= @profile.name %>
-      </p>
-
-      <p style="font-size: 16px; margin-bottom: 10px;">
-        <strong>Description:</strong><br/>
-        <% @profile.description.scan(/.{1,30}/).each do |description_part| %>
-          <%= description_part %><br/>
-        <% end %>
       </p>
 
       <p style="font-size: 16px; margin-bottom: 10px;">
@@ -30,16 +23,26 @@
         <strong>Address:</strong>
         <%= @profile.address %>
       </p>
-      <p>
-        <% if user_signed_in? && current_user.id == @profile.user_id %>
-          <%= link_to '', edit_profile_path(@profile), class: "fas fa-solid fa-pen-fancy fa-2x", title: "プロフィール編集"  %>
+
+      <p style="font-size: 16px; margin-bottom: 10px;">
+        <strong>Description:</strong><br/>
+        <% @profile.description.scan(/.{1,50}/).each do |description_part| %>
+          <%= description_part %><br/>
         <% end %>
-        <td><%= link_to '', blogs_path, class:"fas fa-regular fa-share-from-square fa-flip-horizontal fa-2x", title: "blog一覧へ" %><td>
+      </p>
+
+      <p>
+        <div style="text-align: right; margin-right: 80px;">
+          <% if user_signed_in? && current_user.id == @profile.user_id %>
+            <%= link_to '', edit_profile_path(@profile), class: "fa-solid fa-pen-fancy fa-2x", title: "プロフィール編集"  %>
+            <td><%= link_to '', blogs_path, class:"fa-regular fa-share-from-square fa-flip-horizontal fa-2x", title: "blog一覧へ" %><td>
+          <% end %>  
+        </div>
       </p>
     </div>
   </div>
-<%# </main> %>
 
+<%# <---map表示---> %>
   <script type="text/javascript">
     function initMap() {
       var test = { lat: <%= @profile.latitude %>, lng: <%= @profile.longitude %> };
@@ -76,7 +79,12 @@
     }
   </style>
 
-  <h2>Previous Blogs:</h2>
+<div class="qr-code">
+  <%= render_qr_code(profile_url(@profile), size: 200) %>
+</div>
+
+<br>
+  <h2>Previous Blogs</h2>
     <div class="album py-5 bg-light">
       <div class="container">
         <div class="row">
