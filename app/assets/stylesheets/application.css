@@ -17,6 +17,10 @@
 /* body {
 	background: linear-gradient(135deg, #FE089B, #14EFFF);
 } */
+.card-container {
+  display: flex;
+  align-items: stretch;
+}
 
 h1 {
   text-align: center;
