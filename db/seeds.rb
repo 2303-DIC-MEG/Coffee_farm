@@ -1,7 +1,45 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+# ユーザーデータの投入
+5.times do
+  user = User.create!(
+    name: Faker::Internet.username,
+    email: Faker::Internet.email,
+    password: "password",
+    password_confirmation: "password",
+    role: User.roles.keys.sample # ランダムな role の設定
+  )
+
+  # ブログデータの投入
+  5.times do
+    blog = Blog.create!(
+      title: Faker::Lorem.sentence(word_count: 3),
+      content: Faker::Lorem.paragraph(sentence_count: 2),
+      user: user,
+      image: nil
+    )
+  end
+end
+
+
+# プロフィールデータの投入
+User.all.each do |user|
+  Profile.create!(
+    name: Faker::Name.name,
+    description: Faker::Lorem.paragraph(sentence_count: 2),
+    country: Faker::Address.country,
+    address: Faker::Address.full_address,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
+    user_id: user.id,
+    image: nil
+  )
+end
+
+# お気に入りデータの投入
+User.all.each do |user|
+  Blog.all.sample(3).each do |blog|
+    user.favorites.create!(blog_id: blog.id)
+  end
+end
+
