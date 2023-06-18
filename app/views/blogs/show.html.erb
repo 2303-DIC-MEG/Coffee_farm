@@ -10,7 +10,7 @@
     </div>
     <div style="flex: 1; margin-left: 40px;">
       <p>
-        <%= link_to @blog.user.profile.name, profile_path(@blog.user), class: 'btn btn-link', style: 'font-size: 24px;' %>
+        <%= link_to @blog.user.profile.name, profile_path(@blog.user), class: 'btn-link', style: 'font-size: 24px;' %>
         <%= @blog.created_at.to_date.strftime('%Y-%m-%d') %>
       </p>
       <div class="blog-details">
