@@ -14,9 +14,10 @@
  *= require_self
 
  */
-/* body {
-	background: linear-gradient(135deg, #FE089B, #14EFFF);
-} */
+
+.link-wrapper {
+  margin-right: 25px; 
+}
 
 .card {
   margin-bottom: 20px; /* カードの下部にマージンを追加 */

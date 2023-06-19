@@ -2,12 +2,12 @@
 <br>
 <% if params[:role] == "Coffee_farm" %>
   <h1>コーヒー農園ブログ</h1>
-<% elsif params[:role] == "Barista" %>
-  <h1>バリスタブログ</h1>
-<% elsif current_user.try(:admin?) %>
-  <h1>管理者用サイト</h1>
-<% else %>
-  <h1>ブログ一覧</h1>
+  <% elsif params[:role] == "Barista" %>
+    <h1>バリスタブログ</h1>
+  <% elsif current_user.try(:admin?) %>
+    <h1>管理者用サイト</h1>
+  <% else %>
+    <h1>ブログ一覧</h1>
 <% end %>
 
 <br>
