@@ -1,25 +1,23 @@
-<br>
-<br>
-  <div class="search-results" style="margin-top: 20px;">
-   <h1>検索結果</h1>
-    <tbody>
-      <div class="container mt-4">
-        <div class="row">
-          <% @blogs.each do |blog| %>
-            <div class="col-12 col-sm-6 col-md-4">
-              <div class="card" style="width: 18rem;">
-                <a href="/blogs/<%= blog.id %>" class="card-body text-dark">
-                  <h5><%= blog.user.profile.name %></h5>
-                    <div class="card-body">
-                    <p><%= image_tag blog.image.url, class:"image-body w-100" %></p>
-                    <h5 class="card-title"><%= blog.title %></h5>
-                    <p class="card-text"><%= truncate(blog.content, length: 10) %></p>
-                  </div>
-                </a>
-              </div>
+<div class="search-results" style="margin-top: 40px;">
+  <h1>検索結果</h1>
+  <tbody>
+    <div class="container mt-4">
+      <div class="row">
+        <% @blogs.each do |blog| %>
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card" style="width: 18rem;">
+              <a href="/blogs/<%= blog.id %>" class="card-body text-dark">
+                <h5><%= blog.user.profile.name %></h5>
+                  <div class="card-body">
+                  <p><%= image_tag blog.image.url, class:"image-body w-100" %></p>
+                  <h5 class="card-title"><%= blog.title %></h5>
+                  <p class="card-text"><%= truncate(blog.content, length: 10) %></p>
+                </div>
+              </a>
             </div>
-          <% end%>
-        </div>
+          </div>
+        <% end%>
       </div>
-    </tbody>
-  </div>
+    </div>
+  </tbody>
+</div>

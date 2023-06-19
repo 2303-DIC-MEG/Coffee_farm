@@ -62,7 +62,7 @@
                   <% end %>
                     <% if current_user.admin? %>
                       <div class="link-wrapper">
-                        <%= link_to rails_admin_path, method: :delete, class: "text-dark d-flex flex-column align-items-center" do %>
+                        <%= link_to rails_admin_path, class: "text-dark d-flex flex-column align-items-center" do %>
                           <i class="fas fa-solid fa-hand"></i>
                           <span class="mt-2">管理者ページ</span>
                         <% end %>
@@ -74,7 +74,6 @@
                         <span class="mt-2">ログアウト</span>
                       <% end %>
                     </div>
-                    
               <% else %>
                 <div class="link-wrapper">
                   <%= link_to new_user_registration_path, class: "text-dark d-flex flex-column align-items-center" do %>
