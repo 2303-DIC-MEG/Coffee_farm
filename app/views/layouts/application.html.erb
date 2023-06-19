@@ -47,10 +47,18 @@
                   <% end %>
                 </div>
                 <div class="link-wrapper">
-                  <%= link_to new_blog_path, class: "text-dark d-flex flex-column align-items-center" do %>
-                    <i class="fas fa-solid fa-square-pen"></i>
-                    <span class="mt-2">新規投稿</span>
+                  <% if current_user.profile.nil? %>
+                    <%= link_to new_profile_path, class: "text-dark d-flex flex-column align-items-center" do %>
+                      <i class="fas fa-solid fa-square-pen"></i>
+                      <span class="mt-2">新規投稿</span>
+                    <% end %>
+                  <% else %>
+                    <%= link_to new_blog_path, class: "text-dark d-flex flex-column align-items-center" do %>
+                      <i class="fas fa-solid fa-square-pen"></i>
+                      <span class="mt-2">新規投稿</span>
+                    <% end %>
                   <% end %>
+                </div>
                 </div>
                   <% if !current_user.profile.nil? %>
                     <div class="link-wrapper">
@@ -94,9 +102,13 @@
       </nav>
     </header>
 
-      <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
-      <% end %>
+      
+    <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+    <% end %>
 
       <body>
         <%= yield %>
