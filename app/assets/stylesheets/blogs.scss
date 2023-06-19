@@ -71,16 +71,7 @@ body {
 
     &.btn-link {
       background-color: transparent;
-      color: #007bff;
-    }
-  }
-
-  // リンクのスタイル
-  a {
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
+      color: black;
     }
   }
 }
