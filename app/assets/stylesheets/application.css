@@ -17,6 +17,11 @@
 /* body {
 	background: linear-gradient(135deg, #FE089B, #14EFFF);
 } */
+
+.card {
+  margin-bottom: 20px; /* カードの下部にマージンを追加 */
+}
+
 .card-container {
   display: flex;
   align-items: stretch;
@@ -50,8 +55,15 @@ h2 {
   width: 300px;
 }
 
-.card {
-  margin-bottom: 20px; /* カードの下部にマージンを追加 */
+/* アイコンのデフォルトのスタイル */
+.d-flex.justify-content-end .link-wrapper i {
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+/* ホバー時のスタイル */
+.d-flex.justify-content-end .link-wrapper:hover i {
+  transform: scale(1.2);
 }
 
 body,
