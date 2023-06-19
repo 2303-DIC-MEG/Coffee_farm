@@ -22,6 +22,16 @@
   align-items: stretch;
 }
 
+.card-body {
+  height: 300px;
+  overflow: auto;
+}
+
+.image-body{
+  height: 150px;
+}
+
+
 .blog-image {
   width: 100%;
   height: auto;

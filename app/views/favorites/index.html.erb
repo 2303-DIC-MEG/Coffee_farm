@@ -11,7 +11,7 @@
                 <a href="/blogs/<%= blog.id %>" class="card-body text-dark">
                   <h5><%= blog.user.profile.name %></h5>
                     <div class="card-body">
-                    <p><%= image_tag blog.image.url, class:"w-100" %></p>
+                    <p><%= image_tag blog.image.url, class:"image-body w-100" %></p>
                     <h5 class="card-title"><%= blog.title %></h5>
                     <p class="card-text"><%= truncate(blog.content, length: 10) %></p>
                   </div>
