@@ -15,14 +15,9 @@ require 'faker'
     blog = Blog.create!(
       title: Faker::Lorem.sentence(word_count: 3),
       content: Faker::Lorem.paragraph(sentence_count: 2),
+      image:File.open("./public/images/sample.png"),
       user: user
     )
-  
-    # ダウンロードするサンプル画像のURL
-    image_url = 'https://picsum.photos/200/300'
-  
-    # ActiveStorageを使って画像をアタッチ
-    blog.image.attach(io: URI.open(image_url), filename: 'image.jpg', content_type: 'image/jpg')
   end
 end
 
@@ -36,14 +31,9 @@ User.all.each do |user|
     address: Faker::Address.full_address,
     latitude: Faker::Address.latitude,
     longitude: Faker::Address.longitude,
+    image:File.open("./public/images/sample.png"),
     user: user
   )
-
-  # ダウンロードするサンプル画像のURL
-  image_url = 'https://picsum.photos/200/300'
-
-  # ActiveStorageを使って画像をアタッチ
-  profile.image.attach(io: URI.open(image_url), filename: 'image.jpg', content_type: 'image/jpg')
 end
 
 
