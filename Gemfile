@@ -25,7 +25,7 @@ gem 'rails_admin'
 gem 'cancancan'
 
 # icon
-gem 'font-awesome-sass'
+# gem 'font-awesome-sass'
 
 # googlemap
 gem "geocoder"
