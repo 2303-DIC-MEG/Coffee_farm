@@ -1,64 +1,59 @@
-</html>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="carousel slide data-interval=1000 carousel-fade" data-ride="carousel" style="overflow: hidden;">
-          <div class="carousel-inner" style="height: 80vh;">
-            <div class="carousel-item active">
-              <%# <img src="/assets/top1.jpg" class="d-block w-100" alt=""> %>
-
-              <%= image_tag '/assets/top1.jpg', class: "d-block w-100", alt: "" %>
-            </div>
-            <div class="carousel-item">
-              <%# <img src="/assets/top2.jpg" class="d-block w-100" alt=""> %>
-              <%= image_tag '/assets/top2.jpg', class: "d-block w-100", alt: "" %>
-            </div>
-            <div class="carousel-item">
-              <%# <img src="/assets/top3.jpg" class="d-block w-100" alt=""> %>
-              <%= image_tag '/assets/top3.jpg', class: "d-block w-100", alt: "" %>
-            </div>
-          </div>
+<div class="container">
+  <div class="row">
+    <div class="carousel slide data-interval=1000 carousel-fade" data-ride="carousel" style="overflow: hidden;">
+      <div class="carousel-inner" style="height: 80vh;">
+        <div class="carousel-item active">
+          <%# <img src="/assets/top1.jpg" class="d-block w-100" alt=""> %>
+          <%= image_tag 'top1.jpg', class: "d-block w-100", alt: "" %>
+          <%# <%= link_to image_tag("logo.png", height: "70"), blogs_path %> 
+        </div>
+        <div class="carousel-item">
+          <%# <img src="/assets/top2.jpg" class="d-block w-100" alt=""> %>
+          <%= image_tag 'top2.jpg', class: "d-block w-100", alt: "" %>
+        </div>
+        <div class="carousel-item">
+          <%# <img src="/assets/top3.jpg" class="d-block w-100" alt=""> %>
+          <%= image_tag 'top3.jpg', class: "d-block w-100", alt: "" %>
         </div>
       </div>
     </div>
-
-    <div class="text-center mt-4">
-      <h1 class="app-name" style="font-family: 'Playfair Display', serif; font-size: 50px; font-weight: bold;">Coffee farm</h1>
-    </div>
-
-    <div class="text-center mt-4">
-      <p class="app-description">
-        <h4>
-        Coffee farmは、コーヒー農家とバリスタのコミュニティをつなぐためのプラットフォームです。<br>
-        このアプリを通じて、持続可能なコーヒー生産とコーヒーカルチャーの促進を目指しています。<br><br>
-        </h4>
-        <h5> ログイン機能 </h5>
-            コーヒー農家とバリスタの方々でログインを分けて登録ができます。<br>
-            それぞれの専用アカウントでログインすることで、コミュニティ内での情報やコラボレーションの機会を得ることができます。<br><br>
-        <h5> ブログブックマーク機能 </h5>
-            アプリ内で興味深いブログを見つけた場合、ブックマーク機能を使用して保存することができます。<br>
-            お気に入りの情報を後から簡単にアクセスすることができます。<br><br>
-        <h5>QRコード機能</h5>
-            ユーザーのプロフィール欄には、個別のQRコードが発行されます。<br>
-            バリスタは、自分が使っている農家や地域の人のQRコードカードなどに印刷し、お客様に配布することができます。<br>
-            QRコードをスキャンすることで、農家のプロフィールやコーヒーの情報にアクセスし、コーヒーに関する対話を促進することができます。<br><br>
-        <h5>【目指すビジョン】</h5>
-        私たちは、コーヒー農家とバリスタが互いに連携し、知識や情報を共有し、コーヒーコミュニティをより強固なものにすることを目指しています。<br>
-        Coffee farmは、持続可能なコーヒー生産の促進とコーヒーカルチャーの振興を通じて、コーヒー業界全体の発展に貢献します。<br>
-      </p>
+  </div>
+</div>
+<div class="text-center mt-4">
+  <h1 class="app-name" style="font-family: 'Playfair Display', serif; font-size: 50px; font-weight: bold;">Coffee farm</h1>
+</div>
+<div class="text-center mt-4">
+  <p class="app-description">
+    <h4>
+    Coffee farmは、コーヒー農家とバリスタのコミュニティをつなぐためのプラットフォームです。<br>
+    このアプリを通じて、持続可能なコーヒー生産とコーヒーカルチャーの促進を目指しています。<br><br>
+    </h4>
+    <h5> ログイン機能 </h5>
+        コーヒー農家とバリスタの方々でログインを分けて登録ができます。<br>
+        それぞれの専用アカウントでログインすることで、コミュニティ内での情報やコラボレーションの機会を得ることができます。<br><br>
+    <h5> ブログブックマーク機能 </h5>
+        アプリ内で興味深いブログを見つけた場合、ブックマーク機能を使用して保存することができます。<br>
+        お気に入りの情報を後から簡単にアクセスすることができます。<br><br>
+    <h5>QRコード機能</h5>
+        ユーザーのプロフィール欄には、個別のQRコードが発行されます。<br>
+        バリスタは、自分が使っている農家や地域の人のQRコードカードなどに印刷し、お客様に配布することができます。<br>
+        QRコードをスキャンすることで、農家のプロフィールやコーヒーの情報にアクセスし、コーヒーに関する対話を促進することができます。<br><br>
+    <h5>【目指すビジョン】</h5>
+    私たちは、コーヒー農家とバリスタが互いに連携し、知識や情報を共有し、コーヒーコミュニティをより強固なものにすることを目指しています。<br>
+    Coffee farmは、持続可能なコーヒー生産の促進とコーヒーカルチャーの振興を通じて、コーヒー業界全体の発展に貢献します。<br>
+  </p>
+  <br>
+  <% if user_signed_in? %>
+  <% else %>
+    <div class="link-wrapper">
+      <i class="fa-solid fa-person-circle-check"></i>
+      <%= link_to 'ゲストログイン', guest_coffee_farm_sign_in_path, method: :post %>
       <br>
-      <% if user_signed_in? %>
-      <% else %>
-        <div class="link-wrapper">
-          <i class="fa-solid fa-person-circle-check"></i>
-          <%= link_to 'ゲストログイン', guest_coffee_farm_sign_in_path, method: :post %>
-          <br>
-          <i class="fa-solid fa-person-circle-check"></i>
-          <%= link_to 'ゲストログイン（管理者用）', guest_admin_sign_in_path, method: :post %>
-        </div>
-      <% end %>
+      <i class="fa-solid fa-person-circle-check"></i>
+      <%= link_to 'ゲストログイン（管理者用）', guest_admin_sign_in_path, method: :post %>
     </div>
-  </body>
-</html>
+  <% end %>
+</div>
+
 
 
