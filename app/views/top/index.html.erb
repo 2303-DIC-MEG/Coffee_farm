@@ -42,8 +42,16 @@
         私たちは、コーヒー農家とバリスタが互いに連携し、知識や情報を共有し、コーヒーコミュニティをより強固なものにすることを目指しています。<br>
         Coffee farmは、持続可能なコーヒー生産の促進とコーヒーカルチャーの振興を通じて、コーヒー業界全体の発展に貢献します。<br>
       </p>
-      <%= link_to 'ゲストログイン（閲覧用）', guest_coffee_farm_sign_in_path, method: :post %>
-      <%= link_to 'ゲストログイン（管理者用）', guest_admin_sign_in_path, method: :post %>
+      <br>
+      <% if user_signed_in? %>
+      <% else %>
+        <div class="link-wrapper">
+          <i class="fa-solid fa-person-circle-check"></i>
+          <%= link_to 'ゲストログイン', guest_coffee_farm_sign_in_path, method: :post %>
+          <i class="fa-solid fa-person-circle-check"></i>
+          <%= link_to 'ゲストログイン（管理者用）', guest_admin_sign_in_path, method: :post %>
+        </div>
+      <% end %>
     </div>
   </body>
 </html>
