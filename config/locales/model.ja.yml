@@ -1,0 +1,37 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      profile: プロフィール
+      favorite: お気に入り
+      blog: ブログ
+      active_storage/blob: "添付ファイル"
+      active_storage/attachment: "添付"
+      active_storage/variant_record: "バリアント"
+    attributes:
+      profile:
+        name: コーヒー農園・バリスタ店舗名
+        description: 紹介
+        country: 国名
+        address: 住所
+        image: 画像
+        latitude: 緯度
+        longitude: 経度
+        created_at: 作成日
+        updated_at: 更新日
+      favorite:
+        user: ユーザー
+        blog: ブログ
+        created_at: 作成日
+        updated_at: 更新日
+      blog:
+        title: タイトル
+        content: コンテンツ
+        created_at: 作成日
+        updated_at: 更新日
+        image: 画像
+        user: ユーザー
+        favorites: お気に入り
+        favorite_users: お気に入りユーザー名
+
+

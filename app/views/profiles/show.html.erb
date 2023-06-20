@@ -48,7 +48,6 @@
 <div id="qr-code-wrapper" style="display: none;">
   <div id="qr-code" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); width: 450px; height: 450px;">
     <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-      <%# <%= render_qr_code('raw @qr_code_svg', size: 200) %>
       <%= render_qr_code(profile_url(@profile), size: 200) %>
     </div>
     <button onclick="closeQRCode()" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">閉じる</button>
