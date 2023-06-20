@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
     @profile = current_user.build_profile(profile_params)
   
     if @profile.save
-      redirect_to @profile, notice: "Profile was successfully created."
+      redirect_to @profile, notice: "プロフィールを作成しました"
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
   
   def update
     if @profile.update(profile_params)
-      redirect_to @profile, notice: "Profile was successfully updated."
+      redirect_to @profile, notice: "プロフィールを変更しました"
     else
       render :edit, status: :unprocessable_entity
     end
