@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post '/search',  to: 'blogs#search'
   get  '/search',  to: 'blogs#search'
   get 'profile', to: 'profiles#show'
+  get '/profiles/:id', to: 'profiles#show', as: 'profile_show'
+
 
   resources :favorites, only: [:index, :create, :destroy]
 
