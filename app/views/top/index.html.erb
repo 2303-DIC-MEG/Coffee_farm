@@ -5,13 +5,17 @@
         <div class="carousel slide data-interval=1000 carousel-fade" data-ride="carousel" style="overflow: hidden;">
           <div class="carousel-inner" style="height: 80vh;">
             <div class="carousel-item active">
-              <img src="/assets/top1.jpg" class="d-block w-100" alt="">
+              <%# <img src="/assets/top1.jpg" class="d-block w-100" alt=""> %>
+
+              <%= image_tag '/assets/top1.jpg', class: "d-block w-100", alt: "" %>
             </div>
             <div class="carousel-item">
-              <img src="/assets/top2.jpg" class="d-block w-100" alt="">
+              <%# <img src="/assets/top2.jpg" class="d-block w-100" alt=""> %>
+              <%= image_tag '/assets/top2.jpg', class: "d-block w-100", alt: "" %>
             </div>
             <div class="carousel-item">
-              <img src="/assets/top3.jpg" class="d-block w-100" alt="">
+              <%# <img src="/assets/top3.jpg" class="d-block w-100" alt=""> %>
+              <%= image_tag '/assets/top3.jpg', class: "d-block w-100", alt: "" %>
             </div>
           </div>
         </div>
