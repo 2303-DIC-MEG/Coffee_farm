@@ -1,6 +1,8 @@
 <br>
   <div style="text-align: center;">
-    <%= image_tag @profile.image.url, style: "margin-bottom: 20px; width: 1300px; height: 700px;" %>
+    <% if @profile.image.url %>
+      <%= image_tag @profile.image.url, style: "margin-bottom: 20px; width: 1300px; height: 700px;" %>
+    <% end %>
   </div>
 
   <div style="display: flex; align-items: flex-start;">
@@ -31,9 +33,12 @@
 
       <p style="font-size: 16px; margin-bottom: 10px;">
         <strong>Description:</strong><br/>
-        <% @profile.description.scan(/.{1,50}/).each do |description_part| %>
-          <%= description_part %><br/>
+        <% if @profile.description %>
+          <% @profile.description.scan(/.{1,50}/).each do |description_part| %>
+            <%= description_part %><br/>
+          <% end %>
         <% end %>
+
       </p>
       
 <%# QRコード表示 　ここから%>

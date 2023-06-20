@@ -16,6 +16,7 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲストユーザー(管理者)"
       user.admin = true
+      user.role = "Barista"
     end
   end
 
