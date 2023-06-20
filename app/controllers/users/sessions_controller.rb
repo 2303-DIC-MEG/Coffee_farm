@@ -1,13 +1,13 @@
 class Users::SessionsController < Devise::SessionsController
   def guest_admin_sign_in
     user = User.guest_admin
-    sign_in User.guest_admin
-    redirect_to after_sign_in_path_for(user), notice: 'ゲスト管理者としてログインしました。'
+    sign_in user
+    redirect_to user_path(current_user.id), notice:  'ゲスト管理者としてログインしました。'
   end
 
-  def guest_sign_in
-    user = User.guest
-    sign_in User.guest
-    redirect_to after_sign_in_path_for(user), notice: 'ゲストユーザーとしてログインしました。'
-  end
+  def guest_coffee_farm_sign_in
+    user = User.guest_coffee_farm
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end  
 end
