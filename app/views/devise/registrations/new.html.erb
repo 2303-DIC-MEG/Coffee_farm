@@ -6,7 +6,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
     <div class="mb-3">
       <%= f.label :owner_name, class: "form-label" %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control"%>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "オーナー（店主）の名前を記入"%>
     </div>  
     <div class="mb-3">
       <%= f.label :job, class: "form-label" %><br />
@@ -15,7 +15,7 @@
   
     <div class="mb-3">
       <%= f.label :email, class: "form-label" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "xxxxxxxx@example.com"  %>
     </div>
   
     <div class="mb-3">
@@ -23,12 +23,12 @@
       <% if @minimum_password_length %>
       <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード"  %>
     </div>
   
     <div class="mb-3">
       <%= f.label :password_confirmation, class: "form-label"%><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "パスワード（確認用）" %>
     </div>
   
     <div class="actions text-center">
