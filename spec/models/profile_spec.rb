@@ -20,6 +20,12 @@ RSpec.describe Profile, type: :model do
       end
     end
     describe "descriptionカラムの確認" do
+      context "紹介文の登録がなかった場合" do
+        it "プロフィールの登録ができない" do
+          profile.description = ""
+          expect(profile).not_to be_valid
+        end
+      end   
       context "紹介文の文字数が100以上だった場合" do
         it "プロフィールの登録ができない" do
           profile.description = "a" * 101
