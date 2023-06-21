@@ -4,6 +4,7 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all.order(created_at: :desc)
+    # binding.pry
     @blogs = @blogs.where(user_id: User.send(params[:role]).pluck(:id)) if params[:role].in?(User.roles.keys)
     # if params[:role] == "Coffee_form"
     #   @blogs = @blogs.where(user_id: User.where(role: :Coffee_farm).pluck(:id))
