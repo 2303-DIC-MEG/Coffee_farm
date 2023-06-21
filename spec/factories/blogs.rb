@@ -4,7 +4,7 @@ FactoryBot.define do
     content { 'test_content' }
   end
 
-  factory :second_blog, class: blog do
+  factory :second_blog, class: Blog do
     title { 'test_title2' }
     content { 'test_content2' }
   end

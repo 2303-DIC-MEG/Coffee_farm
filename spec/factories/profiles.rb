@@ -7,7 +7,7 @@ FactoryBot.define do
     longitude { 139.745461 }
   end
 
-  factory :second_profile, class: profile do
+  factory :second_profile, class: Profile do
     name { 'test_store' }
     description { 'Nice' }
     address {'横浜駅'}
