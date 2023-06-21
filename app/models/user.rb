@@ -3,6 +3,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
 
+  validates :name, presence: true, length: { maximum: 30 }
+  validates :email, presence: true, length: { maximum: 255 },
+            format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+
   has_many :blogs
   has_one :profile
   has_many :favorites, dependent: :destroy

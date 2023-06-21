@@ -1,6 +1,10 @@
 class Profile < ApplicationRecord
   belongs_to :user
   mount_uploader :image, ImageUploader
+  validates :name, presence: true
+  validates :description, presence: true, length: { maximum: 30 }
+  validates :country, presence: true
+  validates :address, presence: true
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
