@@ -6,9 +6,9 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @profile = Profile.find(params[:id])
     @user = User.find(@profile.user_id)
     @blogs = @user.blogs
-    @profile = Profile.find(params[:id])
 
     # QRコードの生成
     qr_code = RQRCode::QRCode.new(profile_url(@profile))

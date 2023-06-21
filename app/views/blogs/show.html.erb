@@ -5,7 +5,7 @@
   <div style="display: flex;">
     <div style="flex: 0 0 400px;">
       <p>
-        <%= image_tag @blog.image.url, class: 'blog-image', style: 'width: 100%; max-width: 400px;' if blog.image.present?%>
+        <%= image_tag @blog.image.url, class: 'blog-image', style: 'width: 100%; max-width: 400px;' if @blog.image.present? %>
       </p>
     </div>
     <div style="flex: 1; margin-left: 40px;">
