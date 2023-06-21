@@ -34,7 +34,7 @@
 
     <div class="mb-3">
       <%= form.label :image, class: "form-label" %>
-      <%= form.file_field :image, class: "form-control" %>
+      <%= form.file_field :image, class: "form-control" if blog.image.present?%>
     </div>
 
     <div class="actions">
