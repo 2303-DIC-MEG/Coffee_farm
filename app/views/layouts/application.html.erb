@@ -18,7 +18,7 @@
       <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="navbar-start">
-            <%= link_to image_tag("logo.png", height: "70"), blogs_path %>
+            <%= link_to image_tag("logo.png", height: "70"), root_path %>
           </div>
             <div class="navbar navbar-right">
               <%= form_with(url: search_path, scope: :blog, local: true) do |f| %>
@@ -119,7 +119,7 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         
       <footer>
-        <%=link_to root_path, class: "navar-item" do %>
+        <%=link_to blogs_path, class: "navar-item" do %>
           <span class="text-muted">Coffee farm</span>
         <% end %>
       </footer>

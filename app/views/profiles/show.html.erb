@@ -11,23 +11,22 @@
     </div>
 
     <div style="flex: 1; padding-left: 10px;">
-      <p style="font-size: 30px; margin-bottom: 10px;">
-        <strong>Name:</strong>
+      <p style="font-size: 40px; margin-bottom: 10px;">
         <%= @profile.name %>
       </p>
-
+      <br>
       <p style="font-size: 16px; margin-bottom: 10px;">
-        <strong>Country:</strong>
+        <strong>国　名:　</strong>
         <%= @profile.country %>
       </p>
 
       <p style="font-size: 16px; margin-bottom: 10px;">
-        <strong>Address:</strong>
+        <strong>住　所:　</strong>
         <%= @profile.address %>
       </p>
 
       <p style="font-size: 16px; margin-bottom: 10px;">
-        <strong>Description:</strong><br/>
+        <strong>紹　介　</strong><br/>
         <% if @profile.description %>
           <% @profile.description.scan(/.{1,50}/).each do |description_part| %>
             <%= description_part %><br/>

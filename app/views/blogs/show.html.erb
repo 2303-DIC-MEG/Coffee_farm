@@ -15,11 +15,11 @@
       </p>
       <div class="blog-details">
         <p>
-          <strong>Title:</strong>
+          <strong>タイトル:</strong>
           <%= @blog.title %>
         </p>
         <p>
-          <strong>Content</strong>
+          <strong>内容</strong>
         </p>
         <div class="blog-content" style="font-size: 18px;">
           <%= @blog.content.scan(/.{1,45}/).join("<br>").html_safe %>
