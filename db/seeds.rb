@@ -20,7 +20,7 @@ end
     address: Faker::Address.full_address,
     latitude: Faker::Address.latitude,
     longitude: Faker::Address.longitude,
-    image:File.open("./public/images/sample.png"),
+    image:File.open("app/assets/images/sample.png"),
     user_id: n+1
   )
 end
@@ -30,7 +30,7 @@ end
   blog = Blog.create!(
     title: Faker::Lorem.sentence(word_count: 3),
     content: Faker::Lorem.paragraph(sentence_count: 2),
-    image:File.open("./public/images/sample.png"),
+    image:File.open("app/assets/images/sample.png"),
     user_id: n+1
   )
 end
