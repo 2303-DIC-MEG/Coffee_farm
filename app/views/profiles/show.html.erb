@@ -42,7 +42,7 @@
 <div id="qr-code-wrapper" style="display: none;">
   <div id="qr-code" class = "qr_area">
     <div class = "qr_code">
-      <%= render_qr_code(profile_url(@profile)) %>
+      <%= render_qr_code(profile_url(@profile), {module_size: 6}) %>
     </div>
     <div class = "qr_close">
       <button onclick="closeQRCode()">閉じる</button>
