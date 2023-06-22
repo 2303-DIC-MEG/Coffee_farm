@@ -12,7 +12,6 @@ class ProfilesController < ApplicationController
 
     # QRコードの生成
     qr_code = RQRCode::QRCode.new(profile_url(@profile))
-    # @qr_code_svg = qr_code.as_svg(module_size: 3)
   end
 
   def new
